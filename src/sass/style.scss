@@ -1,0 +1,24 @@
+*{
+    font-family: 'Museo Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@import "base/variables";
+
+.continer{
+    display: block;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 0 5px 0 5px;
+}
+
+@import "blocks/promo";
+@import "blocks/btn";
+@import "blocks/header";
+@import "blocks/advantages";
+
+
+@import "base/media";
+
