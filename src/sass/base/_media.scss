@@ -1,3 +1,9 @@
+@media (max-width: 1199px){
+    .promo{
+        background: url("../img/bg/bg_main.jpg") 15% (center/cover) no-repeat;
+    }
+    
+}
 @media (max-width: 850px){
     .header{
         &__logo{
@@ -18,7 +24,7 @@
         height: 25px;
         &_size{
             height: 37px;
-            font-size: 12px;
+            font-size: 11px;
         }
         &_position{
             padding-top: 4px;
@@ -28,6 +34,10 @@
         min-height: 144vh;
         &__sub-continer{
             align-items: center;
+        }
+        padding-bottom: 30px;
+        &__icon{
+            margin-left: 10px;
         }
     }
     .advantages{
@@ -50,6 +60,7 @@
     }
     .promo{
         padding-bottom: 30px;
+        background: url(../img/bg/bg_main.jpg) 15% center/250% 100% no-repeat;
         &__main-title{
             font-size: 24px;
         }
