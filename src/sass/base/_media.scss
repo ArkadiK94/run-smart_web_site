@@ -17,11 +17,13 @@
         }
         &__phone{
             font-size: 14px;
+            margin-right: 3px;
         }
     }
     .btn{
         width: 135px;
         height: 25px;
+        right: 0vw;
         &_size{
             height: 37px;
             font-size: 11px;
@@ -31,7 +33,7 @@
         }
     }
     .promo{
-        min-height: 144vh;
+        background: url("../img/bg/bg_main.jpg") 85% (center/cover) no-repeat;
         &__sub-continer{
             align-items: center;
         }
@@ -59,8 +61,6 @@
         }
     }
     .promo{
-        padding-bottom: 30px;
-        background: url(../img/bg/bg_main.jpg) 15% center/250% 100% no-repeat;
         &__main-title{
             font-size: 24px;
         }
