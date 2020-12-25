@@ -1,0 +1,28 @@
+.carousel{
+    max-width: 950px;
+    padding: 108px 15px 54px 15px ;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    &__slider-wrapper{
+        position: relative;
+        overflow: hidden;
+        width: 750px;
+        margin: 0 auto;
+    }
+    &__slider-inner{
+        display: flex;
+        transition: 0.5s all;
+        align-items: center;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__arrow-right, &__arrow-left{
+        cursor: pointer;
+    }
+    &-indicators{
+        display: none;
+    }
+}

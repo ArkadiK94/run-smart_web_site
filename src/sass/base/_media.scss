@@ -6,6 +6,7 @@
 }
 @media (max-width: 850px){
     .header{
+        padding: 0 5px;
         &__logo{
             max-width: 30%;
         }
@@ -54,11 +55,49 @@
             font-size: 30px;
         }
     }
+    .carousel{
+        &__arrow-right, &__arrow-left{
+            display: none;
+        }
+        &__slider-inner{
+            img{
+                width: 80vw;
+            }
+        }
+        &-indicators{
+            z-index: 15;
+            display: flex;
+            justify-content: center;
+            &-dot{
+                position: relative;
+                width: 30px;
+                height: 10px;
+                margin-right: 3px;
+                margin-left: 3px;
+                cursor: pointer;
+                background-color: #fff;
+                border: 2px dotted $color-main;
+                opacity: .5;
+                transition: opacity .6s ease;
+            }
+        }
+    }
+    .active{
+        background-color: $color-main;
+    }
 }
 @media(max-width: 690px){
     .title{
         &_left{
             font-size: 25px;
+        }
+    }
+    &__slider-inner{
+        justify-content: space-between;
+        img{
+            display: block;
+            margin: 0 auto;
+            width: 80vw;
         }
     }
 }
