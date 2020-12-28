@@ -76,14 +76,14 @@
                 margin-left: 3px;
                 cursor: pointer;
                 background-color: #fff;
-                border: 2px dotted $color-main;
+                border: 2px dotted $main-color;
                 opacity: .5;
                 transition: opacity .6s ease;
             }
         }
     }
     .active{
-        background-color: $color-main;
+        background-color: $main-color;
     }
 }
 @media(max-width: 690px){

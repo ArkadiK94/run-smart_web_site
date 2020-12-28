@@ -2,7 +2,7 @@
     width: 150px;
     height: 30px;
     border-radius: 5px;
-    background-color: $color-main;
+    background-color: $main-color;
     color: #ffffff;
     font-size: 12px;
     font-weight: 500;
@@ -31,5 +31,13 @@
         height: 55px;
         font-size: 16px;
         margin-left: -1vw;
+    }
+    &_min{
+        display: block;
+        width: 131px;
+        height: 40px;
+        font-size: 14px;
+        margin-right: 9px;
+        margin-top: 3px;
     }
 }
