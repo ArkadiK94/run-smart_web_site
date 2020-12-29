@@ -1,6 +1,7 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", ()=>{
+    //slider
     const carouselSection = document.querySelector(".carousel");
     let distance = 750,
         offset = 0,
@@ -79,5 +80,25 @@ document.addEventListener("DOMContentLoaded", ()=>{
         inner.style.width = distance * sliders.length +"vw";
     }
     
+    //catalog
+    const catalogFlipBtns = document.querySelectorAll(".catalog-card__link"),
+          cardFront = document.querySelectorAll(".catalog-card__front"),
+          cardBack = document.querySelectorAll(".catalog-card__back"); 
+    let j = 0;
+    catalogFlipBtns.forEach((catalogFlipBtn,i)=>{
+        catalogFlipBtn.addEventListener("click",(e)=>{
+            e.preventDefault();
+            if(i%2==1){
+                j = i-1;
+            } else {
+                j = i;
+            }
+            j = j/2;
+            cardFront[j].classList.toggle("catalog-card__front_active");
+            cardBack[j].classList.toggle("catalog-card__back_active");
+            
+        });
+    });
+
     
 });

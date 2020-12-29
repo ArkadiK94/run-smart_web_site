@@ -57,7 +57,10 @@
         &_back{
             position: absolute;
             left: 35%;
-            bottom: 2%;
+            bottom: 0.5%;
+        }
+        &:hover{
+            color: $main-color;
         }
     }
     hr{
