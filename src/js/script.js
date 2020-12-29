@@ -83,7 +83,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //catalog
     const catalogFlipBtns = document.querySelectorAll(".catalog-card__link"),
           cardFront = document.querySelectorAll(".catalog-card__front"),
-          cardBack = document.querySelectorAll(".catalog-card__back"); 
+          cardBack = document.querySelectorAll(".catalog-card__back"),
+          catalogTabs = document.querySelectorAll(".catalog__tab"),
+          catalogContent = document.querySelectorAll(".catalog__content");
     let j = 0;
     catalogFlipBtns.forEach((catalogFlipBtn,i)=>{
         catalogFlipBtn.addEventListener("click",(e)=>{
@@ -99,6 +101,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
             
         });
     });
+
+    catalogTabs.forEach((catalogTab,i)=>{
+        catalogTab.addEventListener("click",()=>{
+            catalogTabs.forEach(item=>item.classList.remove("catalog__tab_active"));
+            catalogTab.classList.add("catalog__tab_active");
+            catalogContent.forEach(item=>item.classList.remove("catalog__content_active"));
+            catalogContent[i].classList.add("catalog__content_active");
+        });
+    });
+
+
 
     
 });

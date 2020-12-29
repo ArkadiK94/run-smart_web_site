@@ -32,9 +32,17 @@
             border: none;
         }
     }
-    &__cards-wrapper{
-        display: flex;
-        flex-wrap: wrap;
+    &__cards{
+        &-wrapper{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    &__content{
+        display: none;
+        &_active{
+            display: flex;
+        }
     }
     &-card{
         margin-top: 20px;
@@ -43,5 +51,8 @@
             margin-right: 0px; 
         }
     } 
+    &__up{
+        display: none;
+    }
 
 }
