@@ -111,7 +111,43 @@ document.addEventListener("DOMContentLoaded", ()=>{
         });
     });
 
+    //phone mask
+    const phoneInForm = document.querySelector("[name=phone]");
+          
+    let phoneArr = ["+","7","(","_","_","_",")","_","_","_","-","_",   "_","-","_","_"],
+        phoneMask = phoneArr.join("");
 
+    function addPhoneMask(){
+        phoneInForm.value = phoneMask; 
+        phoneInForm.removeEventListener("click", addPhoneMask);
+    }
 
+    phoneInForm.addEventListener("click", addPhoneMask);
+
+    phoneInForm.addEventListener("input", (e)=>{
+        e.preventDefault();
+        let previusValue = e.target.value;
+        let newArrValue= "+7(___)___-__-__",
+            newValue = "";
+        if (previusValue.length >= newArrValue.length){
+            for(let i=0; i<previusValue.length; i++){
+                if(!phoneMask.includes(previusValue[i])){
+                    newValue = previusValue[i];
+                    newArrValue = newArrValue.replace("_",newValue);
+                    phoneInForm.value = newArrValue;
+                } else if (previusValue[i] == "7"){
+                    if(i != 1){
+                        newValue = previusValue[i];
+                        newArrValue = newArrValue.replace("_",newValue);
+                        phoneInForm.value = newArrValue;
+                    }
+                }
+            }
+        } else {
+            previusValue = previusValue.replace("", "_");
+            phoneInForm.value = previusValue;
+        }
+        
+    });
     
 });
