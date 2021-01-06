@@ -23,6 +23,14 @@
         } 
     }
 }
+@media (max-width: 940px){
+    .footer{
+        &__info{
+            width:250px;
+            top:40px;
+        }
+    }
+}
 @media (max-width: 850px){
     .header{
         padding: 0 5px;
@@ -37,7 +45,7 @@
         }
         &__phone{
             font-size: 14px;
-            margin-right: 3px;
+            margin-right: 20px;
         }
     }
     .btn:not(.btn_submit,.btn_main){
@@ -103,6 +111,11 @@
     }
     .active{
         background-color: $main-color;
+    }
+    .catalog{
+        &__tab{
+            width: 160px;
+        }
     }
 }
 @media(max-width: 690px){
@@ -223,6 +236,7 @@
             align-items: center;
         }
         &__tab{
+            width: 220px;
             margin-top: 15px;
         }
         
@@ -231,5 +245,10 @@
 @media (max-width: 400px){
     .title{
         font-size: 23px;
+    }
+    .footer{
+        &__info{
+            left: 165px;
+        }
     }
 }

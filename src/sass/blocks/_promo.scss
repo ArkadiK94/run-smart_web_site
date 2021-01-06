@@ -51,6 +51,7 @@
         a{
             color: #ffffff;
             text-decoration: underline; 
+            @include href_hover;
         }
     } 
 }

@@ -1,1 +1,31 @@
+@mixin btn_hover{
+    &:hover{
+        border : none;
+        box-shadow: 5px 5px 10px 0px $second-color;
+    }
+}
 
+@mixin phone_hover{
+    &:hover{
+        color: #ffffff;
+        cursor: pointer;
+        &::after{
+            position: absolute;
+            content: "";
+            margin-left: 5px;
+            width: 15px;
+            height: 15px;
+            background : url("../icons/phone-ringing.svg") center (center/cover) no-repeat;
+            z-index: 3;
+        }
+    }
+}
+
+@mixin href_hover{
+    &:hover{
+        border-width: 1px;
+        border-style: dotted;
+        border-color: $second-color;
+        box-shadow: 1px 1px 10px $second-color
+    }
+}

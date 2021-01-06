@@ -6,6 +6,7 @@
         img{
             max-width: 100%;
         }
+        @include href_hover;
     }
     &__text{
         display: block;
@@ -26,10 +27,7 @@
         font-weight: 700;
         text-align: right;
         text-decoration: none;
-        &:hover{
-            text-decoration: none;
-            color: #ffffff;
-        }
+        @include phone_hover;
     }
 }
     

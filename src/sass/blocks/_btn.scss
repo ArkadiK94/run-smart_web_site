@@ -17,6 +17,7 @@
     &:hover{
         cursor: pointer;
     }
+    @include btn_hover;
     &_main{
         display: block;
         width: 300px;
@@ -25,12 +26,14 @@
         padding-top: 15px;
         right: 0%;
         margin-top: 68px;
+        @include btn_hover;
     }
     &_submit{
         width: 300px;
         height: 55px;
         font-size: 16px;
         margin-left: -1vw;
+        @include btn_hover;
     }
     &_min{
         display: block;
@@ -39,5 +42,6 @@
         font-size: 14px;
         margin-right: 9px;
         margin-top: 3px;
+        @include btn_hover;
     }
 }

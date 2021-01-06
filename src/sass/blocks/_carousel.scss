@@ -21,6 +21,11 @@
     }
     &__arrow-right, &__arrow-left{
         cursor: pointer;
+        &:hover{
+            border : none;
+            box-shadow: 5px 5px 200px 20px $main-color;
+        }
+        
     }
     &-indicators{
         display: none;
