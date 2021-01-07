@@ -21,7 +21,7 @@
                 </div>
                 <div class="header__connect">
                     <a href="tel:+74999228974" class="header__phone">+7 (499) 922-89-74</a>
-                    <button class="btn">заказать звонок</button>
+                    <button data-btn="consultation" class="btn">заказать звонок</button>
                 </div>
             </header>
             <div class="promo__sub-continer">
@@ -44,7 +44,7 @@
                             на все вопросы</div>
                     </div>
                 </div>
-                <div class="btn btn_main">заказать кОНСУЛЬТАЦИЮ</div>
+                <div data-btn="consultation" class="btn btn_main">заказать кОНСУЛЬТАЦИЮ</div>
                 <div class="promo__btn-text">
                     или <a href="#">ПЕРЕЙТИ В КАТАЛОГ</a>
                 </div>
@@ -453,8 +453,44 @@
             </div>
         </div>
     </footer>
+    <div class="overlay">
+        <div class="modal" id="order_consultation">
+            <div class="modal__close">&times</div>
+            <div class="modal__title">Просто заполните форму заявки</div>
+            <div class="modal__sub-title">и мы перезвоним вам в течении 10 минут</div>
+            <form action="#" class="form">
+                <input name="name" required type="text" placeholder="Ваше имя">
+                <input name="phone" maxlength="16" required placeholder="Ваш телефон">
+                <input name="email" required type="email" placeholder="Ваш E-mail">
+                <button class="btn btn_submit">заказать кОНСУЛЬТАЦИЮ</button>
+            </form>
+        </div>
+        <div class="modal" id="buy_product">
+            <div class="modal__close">&times</div>
+            <div class="modal__title">Ваш заказ:</div>
+            <div class="modal__sub-title"></div>
+            <form action="#" class="form">
+                <input name="name" required type="text" placeholder="Ваше имя">
+                <input name="phone" maxlength="16" required placeholder="Ваш телефон">
+                <input name="email" required type="email" placeholder="Ваш E-mail">
+                <button class="btn btn_submit">Купить</button>
+            </form>
+        </div>
+        <div class="modal" id="thanks_massage">
+            <div class="modal__close">&times</div>
+            <div class="modal__title">Спасибо за вашу заявку!</div>
+            <div class="modal__sub-title">
+                Наш менеджер свяжется с вами<br>
+                в ближайшее время!
+            </div>
+        </div>
+    </div>
 
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abd3669969fe76c71071bafe07833644557bc824d7c2914ba7e060885ff9a01a4&amp;width=100%&amp;height=630&amp;lang=en_FR&amp;scroll=false"></script>    <script src="js/phone.mask.min.js"></script>
+
+
+    
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abd3669969fe76c71071bafe07833644557bc824d7c2914ba7e060885ff9a01a4&amp;width=100%&amp;height=630&amp;lang=en_FR&amp;scroll=false"></script>    
+    <script src="js/phone.mask.min.js"></script>
     <script src="https://unpkg.com/imask"></script>
     <script src="js/script.js"></script>
 </body>

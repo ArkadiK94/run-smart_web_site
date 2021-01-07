@@ -138,6 +138,42 @@ document.addEventListener("DOMContentLoaded", () => {
             mask: '+{7}(000)000-00-00'
     });
 
+    //modal
+    const overlay = document.querySelector(".overlay"),
+          modalOrderConsultation = document.querySelector("#order_consultation"),
+          modalBuyProduct = document.querySelector("#buy_product"),
+          modalThanksMassage = document.querySelector("#thanks_massage"),
+          btnConsultation = document.querySelectorAll("[data-btn=consultation]"),
+          btnBuying = document.querySelectorAll(".btn_min"),
+          closeModal =document.querySelectorAll(".modal__close");
+
+    function displayModal(whichBtn,whichModal,modifySubTitle){
+        whichBtn.forEach((item,i)=>{
+            item.addEventListener("click",()=>{
+                overlay.style.display = "block";
+                whichModal.style.display = "block";
+                if(modifySubTitle){
+                    const newSubTitle = cardFront[i].querySelector(".catalog-card__title");
+                    const whichModalSubTitle= whichModal.querySelector(".modal__sub-title");
+                    whichModalSubTitle.innerText= newSubTitle.innerText;                
+                }
+            });
+        });
+    }
+    displayModal(btnConsultation,modalOrderConsultation,false);
+    displayModal(btnBuying,modalBuyProduct,true);
+
+    closeModal.forEach((item)=>{
+        item.addEventListener("click",()=>{
+            overlay.style.display = "none";
+            modalOrderConsultation.style.display = "none";
+            modalBuyProduct.style.display = "none";
+            modalThanksMassage.style.display = "none";
+        });
+    });
+
+    //validation
+    
     
     
 
