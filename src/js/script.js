@@ -133,10 +133,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     //phone mask by https://imask.js.org/
-    const phoneMask = IMask(
-        document.querySelector("[name=phone]"), {
+    const phoneMask1 = IMask(
+        document.querySelector(".consultation form [name=phone]"), {
             mask: '+{7}(000)000-00-00'
-    });
+        }
+    );
+    const phoneMask2 = IMask(
+        document.querySelector("#order_consultation form [name=phone]"), {
+            mask: '+{7}(000)000-00-00'
+        }
+    );
+    const phoneMask3 = IMask(
+        document.querySelector("#buy_product form [name=phone]"), {
+            mask: '+{7}(000)000-00-00'
+        }
+    );
 
     //modal
     const overlay = document.querySelector(".overlay"),
@@ -173,8 +184,120 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     //validation
+    const forms = document.querySelectorAll(".form"),
+          divName = document.createElement("div"),
+          divTel = document.createElement("div"),
+          divEmail = document.createElement("div");
     
-    
-    
+    function massageErrorStyle(input,divMassage, firstForm){
+        divMassage.style.cssText = `
+            display: block;
+            color: #000;
+            margin-bottom: 10px;
+            text-align: center;
+        `;
+        if(firstForm){
+            divMassage.style.cssText = `
+            display: block;
+            color: #fff;
+            margin-bottom: 10px;
+            text-align: center;
+            `;
+        }
+        input.style.cssText =`
+            border-width: 2px;
+            border-color: red;
+        `;
+        input.after(divMassage);
+    }
+    function massageCorrectStyle(input,divMassage){
+        divMassage.style.cssText = `
+            display: none;
+        `;
+        input.style.cssText =`
+            border-color: #fff;
+        `;
+    }
 
+    forms.forEach((form,i)=>{
+        const nameInput = form.querySelector("[name=name]"),
+              telInput = form.querySelector("[name=phone]"),
+              emailInput = form.querySelector("[name=email]");
+
+        let sendForm1 = false,
+            sendForm2 = false,
+            sendForm3 = false;
+        
+        let firstForm = false;
+        if(i==0){
+            firstForm = true;
+        }
+        
+        telInput.append(divTel);
+        emailInput.append(divEmail);
+        closeModal.forEach((item)=>{
+            item.addEventListener("click",()=>{
+                massageCorrectStyle(nameInput,divName);
+                massageCorrectStyle(telInput,divTel);
+                massageCorrectStyle(emailInput,divEmail);
+                form.reset();
+            });
+        });
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            const target = e.target;
+            if(nameInput.value){
+                if((nameInput.value.length >= 5) && (nameInput.value.includes(" ")) && ((nameInput.value)[nameInput.value.length-1]!==(" "))){
+                    sendForm1 = true;
+                    massageCorrectStyle(nameInput,divName);
+                }
+                else if(nameInput.value){
+                        divName.textContent = "You didnt write your full first and last name";
+                        massageErrorStyle(nameInput,divName,firstForm);
+                        sendForm1 = false;
+                }
+            } else{
+                divName.textContent = "Pls, fill your full name";
+                massageErrorStyle(nameInput,divName,firstForm);
+                sendForm1 = false;
+            }
+            if(telInput.value){
+                if(telInput.value.length == 16){
+                    sendForm2 = true;
+                    massageCorrectStyle(telInput,divTel);
+                }
+                else{
+                    divTel.textContent = "Pls,fill your full phone number";
+                    massageErrorStyle(telInput,divTel,firstForm);
+                    sendForm2 = false;
+                }
+            } else{
+                divTel.textContent = "Pls,fill your phone number";
+                massageErrorStyle(telInput,divTel,firstForm);
+                sendForm2 = false;
+            }
+            if(emailInput.value){
+                if(emailInput.value.includes("@") && (emailInput.value.includes(".com")||emailInput.value.includes(".ru")||emailInput.value.includes(".co.il")||emailInput.value.includes(".uk")||emailInput.value.includes(".gov")||emailInput.value.includes(".net"))){
+                    sendForm3 = true;
+                    massageCorrectStyle(emailInput,divEmail);
+                }
+                else{
+                    divEmail.textContent = "Pls,fill your correct Email";
+                    massageErrorStyle(emailInput,divEmail,firstForm);
+                    sendForm3 = false;
+                }
+            } else{
+                divEmail.textContent = "Pls,fill your Email";
+                massageErrorStyle(emailInput,divEmail,firstForm);
+                sendForm3 = false;
+            }
+            if (sendForm1 && sendForm2 && sendForm3){
+                target.reset();
+            }
+        });
+    });
+    
+    
+    
+    
 });

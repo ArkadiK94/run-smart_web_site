@@ -39,13 +39,17 @@
         color: $main-color;
         position: absolute;
         right: -30px;
-        top: -20px;
+        top: -3px;
         font-size: 40px;
+        line-height: 25px;
         cursor: pointer;
         &:hover{
             font-size: 50px;
             right: -35px;
-            top: -25px;
+            background-color: rgba(256,256,256,0.3);
+            box-shadow: 2px 2px 5px rgba(256,256,256,0.5) ;
+            width: 30px;
+            height: 30px;
         }
     }
 }
