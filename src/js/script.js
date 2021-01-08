@@ -194,14 +194,13 @@ document.addEventListener("DOMContentLoaded", () => {
             display: block;
             color: #000;
             margin-bottom: 10px;
-            text-align: center;
+            
         `;
         if(firstForm){
             divMassage.style.cssText = `
             display: block;
             color: #fff;
             margin-bottom: 10px;
-            text-align: center;
             `;
         }
         input.style.cssText =`
