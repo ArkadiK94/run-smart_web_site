@@ -154,6 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
           modalOrderConsultation = document.querySelector("#order_consultation"),
           modalBuyProduct = document.querySelector("#buy_product"),
           modalThanksMassage = document.querySelector("#thanks_massage"),
+          modalErrorMassage = document.querySelector("#error_massage"),
           btnConsultation = document.querySelectorAll("[data-btn=consultation]"),
           btnBuying = document.querySelectorAll(".btn_min"),
           closeModal =document.querySelectorAll(".modal__close");
@@ -180,6 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
             modalOrderConsultation.style.display = "none";
             modalBuyProduct.style.display = "none";
             modalThanksMassage.style.display = "none";
+            modalErrorMassage.style.display = "none";
         });
     });
 
@@ -244,6 +246,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         form.addEventListener("submit",(e)=>{
             e.preventDefault();
+            const request = new XMLHttpRequest(),
+                  formData = new FormData(form);
+            const imgForm = document.createElement("img");
+            imgForm.src = "img/form/spinner.svg";
+            imgForm.style.cssText= `display:block;`;
+            request.open(`POST`,`mailer/smart.php`);
             const target = e.target;
             if(nameInput.value){
                 if((nameInput.value.length >= 5) && (nameInput.value.includes(" ")) && ((nameInput.value)[nameInput.value.length-1]!==(" "))){
@@ -291,11 +299,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 sendForm3 = false;
             }
             if (sendForm1 && sendForm2 && sendForm3){
+                form.append(imgForm);
+                form.insertAdjacentElement('afterend',imgForm);
+                request.send(formData);
+                request.addEventListener("readystatechange",(e)=>{
+                    
+                    if(request.statusText == "OK"){
+                        imgForm.remove();
+                        overlay.style.display = "block";
+                        modalOrderConsultation.style.display = "none";
+                        modalBuyProduct.style.display = "none";
+                        modalThanksMassage.style.display = "block";
+                        modalErrorMassage.style.display = "none";
+                        setTimeout(()=>{
+                            overlay.style.display = "none";
+                            modalThanksMassage.style.display = "none";
+                        },1000);
+                    } else {
+                        imgForm.remove();
+                        overlay.style.display = "block";
+                        modalOrderConsultation.style.display = "none";
+                        modalBuyProduct.style.display = "none";
+                        modalThanksMassage.style.display = "none";
+                        modalErrorMassage.style.display = "block";
+                        setTimeout(()=>{
+                            overlay.style.display = "none";
+                            modalErrorMassage.style.display = "none";
+                        },1000);
+                    }
+                });
                 target.reset();
             }
         });
     });
     
+
     
     
     
