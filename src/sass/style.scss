@@ -4,9 +4,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
 @import "base/variables";
 @import "base/mixins";
+@import "base/my-animation";
 
 
 .continer{
@@ -29,5 +29,6 @@
 @import "blocks/review";
 @import "blocks/footer";
 @import "blocks/modal";
+@import "blocks/arrow-up";
 @import "base/media";
 

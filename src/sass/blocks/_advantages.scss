@@ -20,6 +20,10 @@
         img{
             display: block;
             margin: 0 auto;
+            animation-duration: 2s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
         }
         &-title{
             margin-top: 38px;
@@ -33,6 +37,21 @@
             span{
                 color: #ff0000;
                 text-decoration: underline;
+            }
+        }
+        &:nth-child(1){
+            img{
+                animation-name: cup;
+            }
+        }
+        &:nth-child(2){
+            img{
+                animation-name: heart-beat;
+            }
+        }
+        &:nth-child(3){
+            img{
+                animation-name: shoe;
             }
         }
     }

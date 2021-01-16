@@ -333,8 +333,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     
+    //arrow-up
+    const arrowUp = document.querySelector(".arrow-up");
 
+    window.addEventListener("scroll",()=>{
+        if(window.pageYOffset >= 1600){
+            arrowUp.style.display = "block";
+        } else {
+            arrowUp.style.display = "none";
+        }
+    });
     
-    
-    
+    function myAnimation(){
+        window.scrollBy(0,-30);
+        if(window.pageYOffset > 0){
+            requestAnimationFrame(myAnimation);
+        }
+    }
+    arrowUp.addEventListener("click",(e)=>{
+        e.preventDefault();
+        requestAnimationFrame(myAnimation);
+    });
+
+    //wow animation
+    new WOW().init();
 });

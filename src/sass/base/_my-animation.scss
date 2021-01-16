@@ -1,0 +1,27 @@
+@keyframes heart-beat{
+    from{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+@keyframes shoe{
+    from{
+        transform: rotate(-90deg)
+    }
+    to{
+        transform: rotate(0deg)
+    }
+}
+@keyframes cup{
+    from{
+        transform: rotateY(0deg) translateX(-50px);
+    }
+    to{
+        transform: rotateY(180deg) translateX(+5px);
+    }
+}
