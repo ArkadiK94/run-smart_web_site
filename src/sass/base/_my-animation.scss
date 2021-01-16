@@ -19,9 +19,24 @@
 }
 @keyframes cup{
     from{
+        transform: rotateY(0deg) translateX(0px);
+    }
+    20%{
+        transform: rotateY(180deg) translateX(-25px);
+    }
+    40%{
         transform: rotateY(0deg) translateX(-50px);
     }
-    to{
+    60%{
+        transform: rotateY(180deg) translateX(-25px);
+    }
+    80%{
+        transform: rotateY(0deg) translateX(0px);
+    }
+    90%{
         transform: rotateY(180deg) translateX(+5px);
+    }
+    to{
+        transform: rotateY(0deg) translateX(0);
     }
 }

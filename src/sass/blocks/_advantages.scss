@@ -23,7 +23,6 @@
             animation-duration: 2s;
             animation-timing-function: ease;
             animation-iteration-count: infinite;
-            animation-delay: 1s;
         }
         &-title{
             margin-top: 38px;
@@ -42,6 +41,7 @@
         &:nth-child(1){
             img{
                 animation-name: cup;
+                animation-duration: 20s;
             }
         }
         &:nth-child(2){
@@ -52,6 +52,7 @@
         &:nth-child(3){
             img{
                 animation-name: shoe;
+                animation-duration: 5s;
             }
         }
     }
