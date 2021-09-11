@@ -18,3 +18,6 @@ In Scss/Css we used some important features:
 3. @mixin - unique to css preprocessors , for not coping blocks of code several times 
 4. $varibales - unique to css preprocessors , for not coping varibales several times 
 5. flex - for pacing the elements in the right place
+
+
+*All php files was given by the instructor. For sending the form data from user to the email
